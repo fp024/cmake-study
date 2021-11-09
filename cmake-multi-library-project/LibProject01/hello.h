@@ -1,0 +1,6 @@
+#ifndef CMAKEPROJECTS_HELLO_H
+#define CMAKEPROJECTS_HELLO_H
+
+void printHello();
+
+#endif //CMAKEPROJECTS_HELLO_H

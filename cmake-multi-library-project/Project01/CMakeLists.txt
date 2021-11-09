@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.20)
+set(MAIN_APP Project01)
+set(LIB_PROJECT LibProject01)
+set(LIB_NAME hello)
+project(${MAIN_APP} C)
+
+add_executable(${MAIN_APP} main.c)
+target_include_directories(${MAIN_APP} PRIVATE ../${LIB_PROJECT})
+target_link_directories(${MAIN_APP} PRIVATE ../cmake-build-debug/${LIB_PROJECT})
+target_link_libraries(${MAIN_APP} PRIVATE ${LIB_NAME})
