@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * 윈도우환경에서 CLion의 내장 콘솔에 사소한 문제가 있다.
+ * 윈도우 환경에서 CLion의 내장 콘솔에 사소한 문제가 있다.
  * printf() 같은 화면 출력 함수 뒷 부분에 공백이 있는 상태에서
  * 바로 scanf() 같은 입력 함수가 들어가게 되면, 해당 공백이 입력 함수 처리 이후에
  * 화면에 표시되어 뒤로 밀려버리는 문제가 있다.
@@ -14,7 +14,9 @@
  * run.processes.with.pty 를 끄거나 Cygwin을 사용해보라고 하는데,
  *
  * 나의 경우는 run.processes.with.pty 를 끄면 동작이 더 이상해졌었다.
- * 다른 런타임 환경에 종속 되어버리는 Cygwin은 굳이 설치해서 확인하지는 않았다.
+ *
+ * #### Cygwin에서는 공백 문제가 없음을 확인했다. ####
+ *  참고: https://github.com/fp024/etc/blob/main/clion/CLion-Toolchains-설정.md
  *
  * ===========================================================================
  * run.processes.with.pty
@@ -29,8 +31,8 @@ int main() {
     int a;
     int b;
     int c;
-    printf("한글a:  "); scanf_s("%d", &a);
-    printf("한글b:  "); scanf_s("%d", &b);
-    printf("한글c:  "); scanf_s("%d", &c);
+    printf("한글a:  "); scanf("%d", &a);
+    printf("한글b:  "); scanf("%d", &b);
+    printf("한글c:  "); scanf("%d", &c);
     return 0;
 }
